@@ -14,7 +14,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // 설정정보를 뜻하는 어노테이션
 public class AppConfig {
 
-//  스프링 컨테이너에 빈으로 등록해주는 어노테이션
+//  @Bean 스프링 컨테이너에 빈으로 등록해주는 어노테이션
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+    // Q. 이렇게 보면 메소드마다 같은 클래스의 객체를 두 번 생성하는 것 처럼 보여 싱글톤이 깨지는 것이 아닐까?
+
+
     @Bean
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
