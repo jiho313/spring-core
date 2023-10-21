@@ -11,7 +11,7 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration // 설정정보를 뜻하는 어노테이션
+@Configuration // 설정정보를 뜻하는 어노테이션
 public class AppConfig {
 
 //  @Bean 스프링 컨테이너에 빈으로 등록해주는 어노테이션
