@@ -6,6 +6,7 @@ import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.order.OrderServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -15,6 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ConfigurationSingletonTest {
 
     @Test
+    @DisplayName("스프링 빈의 싱글톤 테스트")
     void configurationTest() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 

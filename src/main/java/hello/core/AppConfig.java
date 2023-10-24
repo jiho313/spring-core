@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // 설정정보를 뜻하는 어노테이션
+// 설정정보는 애플리케이션이 실행될 때 콘솔에서, 컨테이너에 등록된 빈의 정보가 표시된다.
 public class AppConfig {
 
 //  @Bean 스프링 컨테이너에 빈으로 등록해주는 어노테이션
