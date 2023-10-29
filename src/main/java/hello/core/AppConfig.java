@@ -11,7 +11,7 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration // 설정정보를 뜻하는 어노테이션
+@Configuration // 설정정보를 뜻하는 어노테이션 - 싱글톤을 유지하게 해준다.
 // 설정정보는 애플리케이션이 실행될 때 콘솔에서, 컨테이너에 등록된 빈의 정보가 표시된다.
 public class AppConfig {
 
