@@ -5,7 +5,7 @@ import javax.annotation.PreDestroy;
 
 public class NetworkClient {
 
-    private String url;
+    public String url;
 
     public NetworkClient() {
         System.out.println("생성자 호출, url = " + url);
@@ -29,6 +29,7 @@ public class NetworkClient {
         System.out.println("close " + url);
     }
 
+    /*스프링 컨테이너 생성 -> 빈생성 -> 빈 간에 의존성 주입 -> 초기화 콜백 수행*/
     @PostConstruct
     public void init() {
         System.out.println("NetworkClient.init");

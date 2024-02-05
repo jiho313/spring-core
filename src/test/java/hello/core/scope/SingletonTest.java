@@ -17,9 +17,9 @@ public class SingletonTest {
         System.out.println("find singletonBean1");
         SingletonBean singletonBean1 = ac.getBean(SingletonBean.class);
         System.out.println("find singletonBean2");
-        // 둘은 같은 객체다.
         SingletonBean singletonBean2 = ac.getBean(SingletonBean.class);
 
+        // 둘은 같은 객체다.
         System.out.println("singletonBean1 = " + singletonBean1);
         System.out.println("singletonBean2 = " + singletonBean2);
         Assertions.assertThat(singletonBean1).isSameAs(singletonBean2);

@@ -16,6 +16,7 @@ public class PrototypeTest {
         AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
         System.out.println("find prototypeBean1");
         // 프로토타입 스코프 빈은 스프링 컨테이너에서 빈을 조회할 때마다 생성되고 초기화 메서드도 실행된다.
+        // 이 시점에서 새로운 빈을 생성하여 반환한다.
         PrototypeBean prototypeBean1 = ac.getBean(PrototypeBean.class);
         System.out.println("find prototypeBean2");
         // 이때 둘은 다른 객체이다.
@@ -28,6 +29,9 @@ public class PrototypeTest {
 
         // 프로토타입 빈은 스프링 컨테이너가 생성, 의존관계 주입, 초기화 까지만 관여하기에,
         // 스프링 컨테이너가 종료될 때 @PreDestroy와 같은 종료 메서드가 전혀 실행되지 않는다.
+        // 때문에 직접 메서드를 요청해주어 리소스를 회수해준다.
+        prototypeBean1.destroy();
+        prototypeBean2.destroy();
         ac.close();
     }
 
